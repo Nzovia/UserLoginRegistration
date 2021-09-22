@@ -33,9 +33,16 @@ public class UserRepositoryTests {
         //perform the CRUD operation save of the userRepository interface
        User savedUser = repository.save(user);
        //then to assert this test method we use entity manager
-       User exitUser = entityManager.find(User.class, savedUser.getId());// find entity by its primaryKey
-       //using the primary key get the user email to affirm it is as expected
-       assertThat(exitUser.getEmail()).isEqualTo(user.getEmail());
+       User existsUser = entityManager.find(User.class, savedUser.getId());// find entity by its primaryKey
+       //using the primary key get the user email to affirm it is as expected for the existing user
+       assertThat(existsUser.getEmail()).isEqualTo(user.getEmail());
+
+    }
+    @Test
+    public  void testFindUserByEmail(){
+        String email = "nichon@gmail.com";
+        User user= repository.findByEmail(email);
+        assertThat(user).isNotNull();
 
     }
 }

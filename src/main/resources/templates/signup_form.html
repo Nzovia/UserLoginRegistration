@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="webjars/bootstrap/js/boostrap.min.js"></script>
+</head>
+<body>
+<div class="container h-100 d-flex justify-content-center" >
+    <h2>Register here</h2>
+</div>
+<div>
+    <form th:action="@{registration}" method="post"
+          style="max-width: 400px; margin: 0 auto;"
+          th:object="${user}">
+<!-- then specify the rows in the form-->
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Email</label>
+                <div class="col-8">
+                    <input type="email" class="form-control" th:field="*{email}" required minlength="12"
+                           maxlength="40"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-4">First Name</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" th:field="*{firstName}" required minlength="4"
+                           maxlength="20" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-4">Second Name</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" th:field="*{secondName}" required minlength="4"
+                           maxlength="20"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-4">Password</label>
+                <div class="col-8">
+                    <input type="password" class="form-control" th:field="*{password}" required minlength="6"
+                    maxlength="10"
+                    />
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary align-self-center" >Sign Up</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+
+</body>
+</html>
