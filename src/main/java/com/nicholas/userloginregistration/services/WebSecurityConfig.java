@@ -1,5 +1,6 @@
 package com.nicholas.userloginregistration.services;
 
+//This file is well Commented to explain every aspect of spring security authentication
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -54,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //here in configure http we configure the log in and log out for the application
         http.authorizeRequests()
                 //list all the users registered on the website, there we use antmatchers to match with the url
-                .antMatchers("/list_users").authenticated()
+                .antMatchers("/users").authenticated()
                 //. authenticated means for you to view this page
                 // you have to be authenticated since it is protected by spring security
                 .anyRequest().permitAll()
@@ -63,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                      .usernameParameter("email")
                      //landing page for the user on successful login
-                     .defaultSuccessUrl("/list_users")
+                     .defaultSuccessUrl("/users")
                      .permitAll()
                 //implementing logout
                 .and()

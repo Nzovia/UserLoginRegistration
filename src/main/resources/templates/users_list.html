@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>list of Registered Users</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="webjars/bootstrap/js/boostrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+    <h2>Registered Users</h2>
+</div>
+<div>
+    <table class="table table-striped table-bordered table-responsive">
+        <thead class="thead-dark">
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>F Name</th>
+            <th>L Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user: ${list}">
+<!-- and for each user display users for each column-->
+        <td th:text="${user.id}">User Id</td>
+        <td th:text="${user.email}">Email</td>
+        <td th:text="${user.firstName}">First Name</td>
+        <td th:text="${user.secondName}">Second Name</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
