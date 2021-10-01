@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>list of Registered Users</title>
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+<!--    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>-->
     <script type="text/javascript" src="webjars/bootstrap/js/boostrap.min.js"></script>
 </head>
 <body>
-<div class="container text-center">
+<div align="center" class="container my-2">
     <h2>Registered Users</h2>
 </div>
 <div>
-    <table class="table table-striped table-bordered table-responsive">
-        <thead class="thead-dark">
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead class="thead-dark" >
         <tr>
             <th>User ID</th>
             <th>Email</th>
@@ -27,6 +30,8 @@
         <td th:text="${user.email}">Email</td>
         <td th:text="${user.firstName}">First Name</td>
         <td th:text="${user.secondName}">Second Name</td>
+            <td> <a th:href="@{/showFormUpdate/{id}(id=${user.id})}" class="btn btn-primary">update</a>
+                <a th:href="@{/deleteStudent/{id}(id=${user.id})}" class="btn btn-danger">delete</a>
         </tr>
         </tbody>
     </table>

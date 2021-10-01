@@ -8,6 +8,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     //this is the interface for the data access layer
     //User is the domain class, and Long is type of the ID of the domain class
     @Query("SELECT u FROM User u WHERE u.email = ?1")
-     User findByEmail(String email);
+     User findByEmail(String email); 
 
 }

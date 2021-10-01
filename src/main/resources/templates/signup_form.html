@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>SignUp</title>
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+<!--    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/css/bootstrap.min.css"/>-->
     <script type="text/javascript" src="webjars/bootstrap/js/boostrap.min.js"></script>
 </head>
 <body>
@@ -12,32 +15,32 @@
 </div>
 <div>
     <form th:action="@{registration}" method="post"
-          style="max-width: 400px; margin: 0 auto;"
+          style="max-width: 900px; margin: 0 auto;"
           th:object="${user}">
 <!-- then specify the rows in the form-->
         <div class="m-3">
-            <div class="form-group row">
+            <div class="mb-3">
                 <label class="col-form-label col-4">Email</label>
                 <div class="col-8">
                     <input type="email" class="form-control" th:field="*{email}" required minlength="12"
                            maxlength="40"/>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="mb-3">
                 <label class="col-form-label col-4">First Name</label>
                 <div class="col-8">
                     <input type="text" class="form-control" th:field="*{firstName}" required minlength="4"
                            maxlength="20" />
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="mb-3">
                 <label class="col-form-label col-4">Second Name</label>
                 <div class="col-8">
                     <input type="text" class="form-control" th:field="*{secondName}" required minlength="4"
                            maxlength="20"/>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="mb-3">
                 <label class="col-form-label col-4">Password</label>
                 <div class="col-8">
                     <input type="password" class="form-control" th:field="*{password}" required minlength="6"
